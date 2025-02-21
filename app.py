@@ -133,7 +133,3 @@ with col1:
 with col2:
     if st.button("About Us"):
         st.session_state.page = "About Us"
-
-
-elif st.session_state.page == "About Us":
-    show_about()
