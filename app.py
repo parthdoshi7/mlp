@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Load the trained model
 pipe = pickle.load(open('pipe.pkl', 'rb'))
@@ -133,3 +134,25 @@ with col1:
 with col2:
     if st.button("About Us"):
         st.session_state.page = "About Us"
+
+# selected page
+if st.session_state.page == "Home":
+    batting_team, win_percentage, bowling_team, loss_percentage = show_home()
+    if batting_team and win_percentage and bowling_team and loss_percentage:
+        # Data for the bar chart
+        teams = [batting_team, bowling_team]
+        probabilities = [win_percentage, loss_percentage]
+        # Create the bar chart
+        fig, ax = plt.subplots()
+        bars = ax.bar(teams, probabilities, color=['green', 'red'])
+        # Add labels and title
+        ax.set_ylabel('Probability (%)')
+        ax.set_title('IPL Win Probability')
+        # Display percentage on top of the bars
+        for bar in bars:
+            yval = bar.get_height()
+            plt.text(bar.get_x() + bar.get_width()/2, yval, f'{yval}%', ha='center', va='bottom')
+        # Display the chart in Streamlit
+        st.pyplot(fig)
+elif st.session_state.page == "About Us":
+    show_about()
