@@ -88,8 +88,8 @@ def show_about():
 
     **Datasets:**
     The project utilizes two primary datasets:
-    1. **Matches Dataset (`matches.csv`)**: Contains detailed information about IPL matches, including teams, scores, outcomes, player of the match, venue, and more.
-    2. **Deliveries Dataset (`deliveries.csv`)**: Contains ball-by-ball data for each match, providing granular details like batsman, bowler, runs scored, extras, dismissals, etc.
+    1. **Matches Dataset (`matches.csv`)**: Contains detailed information about IPL matches, including teams, scores, outcomes, player of the match, venue, and more. (756 Records)
+    2. **Deliveries Dataset (`deliveries.csv`)**: Contains ball-by-ball data for each match, providing granular details like batsman, bowler, runs scored, extras, dismissals, etc. (179,078 Records)
 
     **Two machine learning algorithms were employed:**
     1. **Logistic Regression**:
@@ -108,6 +108,12 @@ def show_about():
         2. **Random Search:**
             - Randomly selects hyperparameter values within a range, balancing efficiency and performance.
             - Both models were trained and evaluated to compare performance, with hyperparameter tuning applied to optimize their predictive capabilities.
+    
+    *Best Model is: Random Forest Classifier*  
+    -  Min Samples Split: 10
+    -  Number of Estimators: 50
+    -  StandardScaler for feature scaling
+    -  Accuracy on Test Data: 0.5833333333333334 (58.33%)
 
     **Ensure the following Python libraries are installed:**
     - `numpy`
