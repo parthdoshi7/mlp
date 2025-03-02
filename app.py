@@ -109,7 +109,7 @@ def show_about():
             - Randomly selects hyperparameter values within a range, balancing efficiency and performance.
             - Both models were trained and evaluated to compare performance, with hyperparameter tuning applied to optimize their predictive capabilities.
     
-    *Best Model is: Random Forest Classifier*  
+    **Best Model is: Random Forest Classifier**  
     -  Min Samples Split: 10
     -  Number of Estimators: 50
     -  StandardScaler for feature scaling
