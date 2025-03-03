@@ -104,7 +104,7 @@ def show_home():
             format="%.1f"
         )
     with col5:
-        wickets_out = st.number_input('Wickets out', min_value=0, format="%d")
+        wickets_out = st.number_input('Wickets out', min_value=0, max_value=10, format="%d")
     
     if st.button('Predict Probability'):
         runs_left = target - score
